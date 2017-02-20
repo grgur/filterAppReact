@@ -38,3 +38,6 @@ jspm_packages
 
 # IDEA metadata
 .idea
+
+# bundled assets
+public/bundle.js

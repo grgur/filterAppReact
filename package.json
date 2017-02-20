@@ -2,8 +2,9 @@
   "name": "filter-app-react",
   "version": "1.0.0",
   "description": "A small React demo app",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ikovic/filterAppReact/issues"
   },
-  "homepage": "https://github.com/ikovic/filterAppReact#readme"
+  "homepage": "https://github.com/ikovic/filterAppReact#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
 }
