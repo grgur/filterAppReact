@@ -1,0 +1,19 @@
+{
+  "name": "filter-app-react",
+  "version": "1.0.0",
+  "description": "A small React demo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikovic/filterAppReact.git"
+  },
+  "author": "Antonio Basic, Miro Dojkic, Ivan Kovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ikovic/filterAppReact/issues"
+  },
+  "homepage": "https://github.com/ikovic/filterAppReact#readme"
+}
