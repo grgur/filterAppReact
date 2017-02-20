@@ -10,9 +10,9 @@ module.exports = function (env) {
 
   const plugins = [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
+      name: 'vendor',
       minChunks: Infinity,
-      filename: 'common.bundle.js'
+      filename: 'vendor.bundle.js'
     }),
     new webpack.NamedModulesPlugin()
   ];
@@ -28,11 +28,23 @@ module.exports = function (env) {
     context: sourcePath,
     entry: {
       js: './index.js',
-      //vendor: ['react']
+      vendor: ['react', 'react-dom']
     },
     output: {
       path: outputPath,
       filename: 'bundle.js',
+    },
+
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: [
+            'babel-loader'
+          ],
+        }
+      ]
     },
 
     plugins,
