@@ -18,7 +18,29 @@ module.exports = function (env) {
   ];
 
   if (isProd) {
-
+    plugins.push(
+      new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: false
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          screw_ie8: true,
+          conditionals: true,
+          unused: true,
+          comparisons: true,
+          sequences: true,
+          dead_code: true,
+          evaluate: true,
+          if_return: true,
+          join_vars: true,
+        },
+        output: {
+          comments: false,
+        }
+      })
+    );
   } else {
     plugins.push(new webpack.HotModuleReplacementPlugin());
   }
@@ -38,12 +60,34 @@ module.exports = function (env) {
     module: {
       rules: [
         {
+          test: /\.scss$/,
+          use: [
+            {
+              loader: "style-loader" // creates style nodes from JS strings
+            },
+            {
+              loader: "css-loader" // translates CSS into CommonJS
+            },
+            {
+              loader: "sass-loader" // compiles Sass to CSS
+            }
+          ]
+        },
+        {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: [
             'babel-loader'
           ],
         }
+      ]
+    },
+
+    resolve: {
+      extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
+      modules: [
+        path.resolve(__dirname, 'node_modules'),
+        sourcePath
       ]
     },
 
