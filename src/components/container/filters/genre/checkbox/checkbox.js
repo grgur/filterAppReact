@@ -4,7 +4,8 @@ const Checkbox = ({name, label, value, handleChange}) => {
 
   return (
     <label>
-      <input type="checkbox" name={name} checked={!!value} onChange={() => handleChange(name, value)}/>
+      <input type="checkbox" name={name} checked={!!value} onChange={(e) => {
+        handleChange(name, e.target.checked)}}/>
       {label}
     </label>
   );

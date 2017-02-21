@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 const RadioButton = ({name, label, value, handleChange}) => {
   return (
     <label>
-      <input name={name} type="radio" checked={!!value} onChange={() => handleChange(label, value)}/>
+      <input name={name} type="radio" checked={!!value} value={label} onChange={(e) => handleChange(e.target.value)}/>
       {label}
     </label>
   );
