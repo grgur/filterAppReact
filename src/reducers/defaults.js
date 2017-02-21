@@ -1,4 +1,4 @@
-const defaultType = 'movies';
+const defaultType = 'movie';
 const defaultRating = 'N/A';
 const defaultGenres = ['Action', 'Comedy'];
 

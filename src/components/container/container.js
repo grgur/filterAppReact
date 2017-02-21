@@ -1,20 +1,20 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
+import {selectType} from '../../actions';
+
 import Filters from './filters/filters';
 import Groups from './groups/groups';
 import Movies from './movies/movies';
 
 class Container extends Component {
-
   render() {
-
-    console.log(this.props);
-
+    const {filters} = this.props;
+    const filterActions = {selectType: this.props.selectType};
     return (
       <div id="container">
         <aside>
-          <Filters/>
+          <Filters filters={filters} actions={filterActions}/>
         </aside>
         <article>
           <Groups/>
@@ -29,19 +29,20 @@ class Container extends Component {
 }
 
 Container.propTypes = {
-  type: PropTypes.string.isRequired,
-  genres: PropTypes.array.isRequired,
-  rating: PropTypes.string.isRequired
+  filters: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
   const {filters} = state;
-  const {type, genres, rating} = filters;
   return {
-    type,
-    genres,
-    rating
+    filters
   }
 }
 
-export default connect(mapStateToProps)(Container);
+function mapDispatchToProps(dispatch) {
+  return {
+    selectType: type => dispatch(selectType(type))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Container);
