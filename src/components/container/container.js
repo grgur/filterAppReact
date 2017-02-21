@@ -9,10 +9,8 @@ import Movies from './movies/movies';
 
 class Container extends Component {
   render() {
-    const {filters, groups, selectType, selectRating, toggleGenre} = this.props;
+    const {filters, groups, selectType, selectRating, toggleGenre, selectGroup} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
-
-    console.dir(groups);
 
     return (
       <div id="container">

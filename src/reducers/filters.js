@@ -1,13 +1,16 @@
 import {defaultType, defaultRating, defaultGenres} from './defaults';
 import {combineReducers} from 'redux';
 
-import {SELECT_TYPE, SELECT_RATING, TOGGLE_GENRE} from '../actions';
+import {SELECT_TYPE, SELECT_RATING, TOGGLE_GENRE, SELECT_GROUP} from '../actions';
 
 function type(state = defaultType, action) {
   switch (action.type) {
 
     case SELECT_TYPE:
       return action.newType;
+
+    case SELECT_GROUP:
+      return action.group.type;
 
     default:
       return state;
@@ -28,6 +31,9 @@ function genres(state = defaultGenres, action) {
     case TOGGLE_GENRE:
       return toggleGenre(state, action.genre, action.add);
 
+    case SELECT_GROUP:
+      return action.group.genres.slice();
+
     default:
       return state;
   }
@@ -38,6 +44,9 @@ function rating(state = defaultRating, action) {
 
     case SELECT_RATING:
       return action.rating;
+
+    case SELECT_GROUP:
+      return action.group.rating;
 
     default:
       return state;
