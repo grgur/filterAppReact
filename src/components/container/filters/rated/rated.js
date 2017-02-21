@@ -1,18 +1,28 @@
 import React, {PropTypes} from 'react';
+import constants from '../../../../constants';
+import RadioButton from './radioButton/radioButton';
 
 const Rated = props => {
+
+  const ratings = constants.ratings;
+  const ratedRadioButtons = ratings.map(rating => <RadioButton name="ratedRadioBtn"
+                                                               key={`ratedRadioBtn${rating}`}
+                                                               label={rating}
+                                                               value={false}
+                                                               handleChange={removeMe}
+  />);
 
   return (
     <div>
       <h3>Rated</h3>
-      <input name="ratedRadioBtn" type="radio" id="ratedG"/><label htmlFor="ratedG">G</label>
-      <input name="ratedRadioBtn" type="radio" id="ratedPG"/><label htmlFor="ratedPG">PG</label>
-      <input name="ratedRadioBtn" type="radio" id="ratedPG-13"/><label htmlFor="ratedPG-13">PG-13</label>
-      <input name="ratedRadioBtn" type="radio" id="ratedR"/><label htmlFor="ratedR">R</label>
-      <input name="ratedRadioBtn" type="radio" id="ratedNC-17"/><label htmlFor="ratedNC-17">NC-17</label>
+      {ratedRadioButtons}
     </div>
   );
 
 };
+
+function removeMe(name, value) {
+  console.log(name, value);
+}
 
 export default Rated;
