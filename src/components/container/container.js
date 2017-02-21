@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import FaBars from 'react-icons/lib/fa/bars';
 
 import {selectType, selectRating, toggleGenre, selectGroup} from '../../actions';
 
@@ -14,7 +15,8 @@ class Container extends Component {
 
     return (
       <div id="container">
-        <aside>
+        <aside id="filters-menu-wrapper">
+          <FaBars />
           <Filters filters={filters} actions={filterActions}/>
         </aside>
         <article>
