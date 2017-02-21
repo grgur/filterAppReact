@@ -8,13 +8,13 @@ const Filters = ({filters, actions}) => {
   console.dir(filters);
 
   const {type, genres, rating} = filters;
-  const {selectType, selectRating} = actions;
+  const {selectType, selectRating, toggleGenre} = actions;
 
   return (
     <div>
       <Type type={type} selectType={selectType}/>
       <Rated rating={rating} selectRating={selectRating}/>
-      <Genre/>
+      <Genre genres={genres} toggleGenre={toggleGenre}/>
     </div>
   );
 };

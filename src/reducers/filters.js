@@ -1,7 +1,7 @@
 import {defaultType, defaultRating, defaultGenres} from './defaults';
 import {combineReducers} from 'redux';
 
-import {SELECT_TYPE, SELECT_RATING} from '../actions';
+import {SELECT_TYPE, SELECT_RATING, TOGGLE_GENRE} from '../actions';
 
 function type(state = defaultType, action) {
   switch (action.type) {
@@ -14,8 +14,20 @@ function type(state = defaultType, action) {
   }
 }
 
+function toggleGenre(genres, genre, add) {
+  if (add) {
+    return genres.concat(genre);
+  } else {
+    return genres.filter(g => g !== genre);
+  }
+}
+
 function genres(state = defaultGenres, action) {
   switch (action.type) {
+
+    case TOGGLE_GENRE:
+      return toggleGenre(state, action.genre, action.add);
+
     default:
       return state;
   }
