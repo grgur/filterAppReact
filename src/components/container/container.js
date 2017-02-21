@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import {selectType, selectRating, toggleGenre} from '../../actions';
+import {selectType, selectRating, toggleGenre, selectGroup} from '../../actions';
 
 import Filters from './filters/filters';
 import Groups from './groups/groups';
@@ -20,7 +20,7 @@ class Container extends Component {
           <Filters filters={filters} actions={filterActions}/>
         </aside>
         <article>
-          <Groups/>
+          <Groups groups={groups} selectGroup={selectGroup}/>
         </article>
         <article>
           <Movies/>
@@ -46,7 +46,8 @@ function mapDispatchToProps(dispatch) {
   return {
     selectType: type => dispatch(selectType(type)),
     selectRating: rating => dispatch(selectRating(rating)),
-    toggleGenre: (genre, add) => dispatch(toggleGenre(genre, add))
+    toggleGenre: (genre, add) => dispatch(toggleGenre(genre, add)),
+    selectGroup: group => dispatch(selectGroup(group))
   }
 }
 
