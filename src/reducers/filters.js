@@ -1,7 +1,7 @@
 import {defaultType, defaultRating, defaultGenres} from './defaults';
 import {combineReducers} from 'redux';
 
-import {SELECT_TYPE} from '../actions';
+import {SELECT_TYPE, SELECT_RATING} from '../actions';
 
 function type(state = defaultType, action) {
   switch (action.type) {
@@ -23,6 +23,10 @@ function genres(state = defaultGenres, action) {
 
 function rating(state = defaultRating, action) {
   switch (action.type) {
+
+    case SELECT_RATING:
+      return action.rating;
+
     default:
       return state;
   }

@@ -8,12 +8,12 @@ const Filters = ({filters, actions}) => {
   console.dir(filters);
 
   const {type, genres, rating} = filters;
-  const {selectType} = actions;
+  const {selectType, selectRating} = actions;
 
   return (
     <div>
       <Type type={type} selectType={selectType}/>
-      <Rated/>
+      <Rated rating={rating} selectRating={selectRating}/>
       <Genre/>
     </div>
   );

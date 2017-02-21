@@ -2,14 +2,14 @@ import React, {PropTypes} from 'react';
 import constants from '../../../../constants';
 import RadioButton from './radioButton/radioButton';
 
-const Rated = props => {
+const Rated = ({rating, selectRating}) => {
 
   const ratings = constants.ratings;
-  const ratedRadioButtons = ratings.map(rating => <RadioButton name="ratedRadioBtn"
-                                                               key={`ratedRadioBtn${rating}`}
-                                                               label={rating}
-                                                               value={false}
-                                                               handleChange={removeMe}
+  const ratedRadioButtons = ratings.map(ratingItem => <RadioButton name="ratedRadioBtn"
+                                                                   key={`ratedRadioBtn${ratingItem}`}
+                                                                   label={ratingItem}
+                                                                   value={rating === ratingItem}
+                                                                   handleChange={selectRating}
   />);
 
   return (
@@ -21,8 +21,9 @@ const Rated = props => {
 
 };
 
-function removeMe(name, value) {
-  console.log(name, value);
-}
+Rated.propTypes = {
+  rating: PropTypes.string.isRequired,
+  selectRating: PropTypes.func.isRequired
+};
 
 export default Rated;

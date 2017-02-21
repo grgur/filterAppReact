@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import {selectType} from '../../actions';
+import {selectType, selectRating} from '../../actions';
 
 import Filters from './filters/filters';
 import Groups from './groups/groups';
@@ -10,7 +10,8 @@ import Movies from './movies/movies';
 class Container extends Component {
   render() {
     const {filters} = this.props;
-    const filterActions = {selectType: this.props.selectType};
+    const {selectType, selectRating} = this.props;
+    const filterActions = {selectType, selectRating};
     return (
       <div id="container">
         <aside>
@@ -41,7 +42,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    selectType: type => dispatch(selectType(type))
+    selectType: type => dispatch(selectType(type)),
+    selectRating: rating => dispatch(selectRating(rating))
   }
 }
 
