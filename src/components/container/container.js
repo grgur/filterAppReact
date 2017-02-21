@@ -9,8 +9,11 @@ import Movies from './movies/movies';
 
 class Container extends Component {
   render() {
-    const {filters, selectType, selectRating, toggleGenre} = this.props;
+    const {filters, groups, selectType, selectRating, toggleGenre} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
+
+    console.dir(groups);
+
     return (
       <div id="container">
         <aside>
@@ -32,9 +35,10 @@ Container.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const {filters} = state;
+  const {filters, groups} = state;
   return {
-    filters
+    filters,
+    groups
   }
 }
 

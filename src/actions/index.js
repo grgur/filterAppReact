@@ -1,6 +1,7 @@
 export const SELECT_TYPE = 'SELECT_TYPE';
 export const SELECT_RATING = 'SELECT_RATING';
 export const TOGGLE_GENRE = 'TOGGLE_GENRE';
+export const SELECT_GROUP = 'SELECT_GROUP';
 
 export function selectType(newType) {
   return {
@@ -24,4 +25,9 @@ export function toggleGenre(genre, add) {
   }
 }
 
-
+export function selectGroup(group) {
+  return {
+    type: SELECT_GROUP,
+    group
+  }
+}
