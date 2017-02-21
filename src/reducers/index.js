@@ -1,4 +1,4 @@
 import {combineReducers} from 'redux';
-import type from './type';
+import filters from './filters';
 
-export default combineReducers({type});
+export default combineReducers({filters});
