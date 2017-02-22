@@ -1,0 +1,11 @@
+#filters-menu-icon {
+  font-size: 47px;
+  margin-left: 14px;
+  margin-top: 10px;
+
+  @media screen and (min-width:1280px) {
+    & {
+      display: none;
+    }
+  }
+}

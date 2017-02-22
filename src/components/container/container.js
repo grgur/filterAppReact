@@ -1,11 +1,14 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import FaBars from 'react-icons/lib/fa/bars';
 
 import {selectType, selectRating, toggleGenre, selectGroup} from '../../actions';
 
 import Filters from './filters/filters';
 import Groups from './groups/groups';
 import Movies from './movies/movies';
+
+import './container.scss';
 
 class Container extends Component {
   render() {
@@ -14,7 +17,8 @@ class Container extends Component {
 
     return (
       <div id="container">
-        <aside>
+        <aside id="filters-menu-wrapper">
+          <FaBars id="filters-menu-icon"/>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
         <article>
