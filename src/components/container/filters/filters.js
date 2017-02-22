@@ -3,8 +3,6 @@ import Type from './type/type';
 import Rated from './rated/rated';
 import Genre from './genre/genre';
 
-import './filters.scss';
-
 const Filters = ({filters, actions}) => {
   const {type, genres, rating} = filters;
   const {selectType, selectRating, toggleGenre} = actions;

@@ -21,10 +21,10 @@ class Container extends Component {
           <FaBars id="filters-menu-icon"/>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
-        <article>
+        <article id="groups-wrapper">
           <Groups groups={groups} selectGroup={selectGroup}/>
         </article>
-        <article>
+        <article id="movies-wrapper">
           <Movies/>
         </article>
       </div>

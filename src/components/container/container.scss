@@ -1,11 +1,33 @@
-#filters-menu-icon {
-  font-size: 47px;
-  margin-left: 14px;
-  margin-top: 10px;
+#filters-menu-wrapper {
+  float: left;
+  padding-left: 20px;
+  width: 233px;
+  border-right: 2px solid #BABFD1;
 
-  @media screen and (min-width:1280px) {
-    & {
-      display: none;
+  & > div {
+    padding-right: 12px;
+  }
+
+  & #filters-menu-icon {
+    font-size: 47px;
+    margin-top: 10px;
+
+    @media screen and (min-width:1280px) {
+      & {
+        display: none;
+      }
     }
   }
+}
+
+#groups-wrapper, #movies-wrapper {
+  margin-left: 20px;
+}
+
+#groups-wrapper {
+  display: inline-block;
+}
+
+#movies-wrapper {
+  display: block;
 }
