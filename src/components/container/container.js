@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
 import {selectType, selectRating, toggleGenre, selectGroup} from '../../actions';
@@ -7,9 +7,9 @@ import Filters from './filters/filters';
 import Groups from './groups/groups';
 import Movies from './movies/movies';
 
-class Container extends Component {
+class Container extends PureComponent {
   render() {
-    const {filters, groups, selectType, selectRating, toggleGenre, selectGroup} = this.props;
+    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
 
     return (
@@ -21,7 +21,7 @@ class Container extends Component {
           <Groups groups={groups} selectGroup={selectGroup}/>
         </article>
         <article>
-          <Movies/>
+          <Movies movies={movies}/>
         </article>
       </div>
     )
@@ -33,10 +33,11 @@ Container.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const {filters, groups} = state;
+  const {filters, groups, movies} = state;
   return {
     filters,
-    groups
+    groups,
+    movies
   }
 }
 
