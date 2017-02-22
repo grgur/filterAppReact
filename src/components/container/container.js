@@ -8,6 +8,8 @@ import Filters from './filters/filters';
 import Groups from './groups/groups';
 import Movies from './movies/movies';
 
+import './container.scss';
+
 class Container extends Component {
   render() {
     const {filters, groups, selectType, selectRating, toggleGenre, selectGroup} = this.props;
@@ -16,7 +18,7 @@ class Container extends Component {
     return (
       <div id="container">
         <aside id="filters-menu-wrapper">
-          <FaBars />
+          <FaBars id="filters-menu-icon"/>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
         <article>
