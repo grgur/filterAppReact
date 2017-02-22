@@ -25,7 +25,7 @@ const defaultGroups = [
   }
 ];
 const defaultMovies = {
-  status: 'LOADED',
+  status: 'DONE',
   movies: [
     {
       "Title": "The Lord of the Rings: The Fellowship of the Ring",
