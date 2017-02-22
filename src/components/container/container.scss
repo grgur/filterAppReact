@@ -1,5 +1,11 @@
-@media screen and (min-width:1280px) {
-  #filters-menu-icon {
-    display: none;
+#filters-menu-icon {
+  font-size: 32px;
+  margin-left: 5px;
+  margin-top: 5px;
+  
+  @media screen and (min-width:1280px) {
+    & {
+      display: none;
+    }
   }
 }
