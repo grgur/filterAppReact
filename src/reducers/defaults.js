@@ -1,3 +1,5 @@
+const defaultModal = {visible: false};
+const defaultSpinner = {visible: false};
 const defaultType = 'movie';
 const defaultRating = 'N/A';
 const defaultGenres = ['Action', 'Comedy'];
@@ -56,5 +58,7 @@ export {
   defaultRating,
   defaultGenres,
   defaultGroups,
-  defaultMovies
+  defaultMovies,
+  defaultModal,
+  defaultSpinner
 };

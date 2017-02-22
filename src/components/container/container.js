@@ -4,6 +4,7 @@ import FaBars from 'react-icons/lib/fa/bars';
 
 import {selectType, selectRating, toggleGenre, selectGroup, loadMovies} from '../../actions';
 
+import Notifications from './notifications/notifications';
 import Filters from './filters/filters';
 import Groups from './groups/groups';
 import Movies from './movies/movies';
@@ -19,7 +20,7 @@ class Container extends PureComponent {
   }
 
   render() {
-    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup} = this.props;
+    const {filters, groups, movies, notifications, selectType, selectRating, toggleGenre, selectGroup} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
 
     return (
@@ -34,6 +35,7 @@ class Container extends PureComponent {
         <article>
           <Movies movies={movies}/>
         </article>
+        <Notifications notifications={notifications}/>
       </div>
     )
   }
@@ -44,11 +46,12 @@ Container.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const {filters, groups, movies} = state;
+  const {filters, groups, movies, notifications} = state;
   return {
     filters,
     groups,
-    movies
+    movies,
+    notifications
   }
 }
 
