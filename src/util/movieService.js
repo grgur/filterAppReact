@@ -1,9 +1,9 @@
 import axios from 'axios';
-import {createQuery} from './query';
+import queryString from 'query-string';
 import constants from '../constants';
 
 function getMovies(filter) {
-  const query = createQuery(filter);
+  const query = '?' + queryString.stringify(filter);
   return axios.get(constants.apiUrl + query);
 }
 
