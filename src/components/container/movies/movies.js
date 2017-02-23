@@ -12,7 +12,7 @@ const Movies = ({movies, showDetailsModal}) => {
       return <h2>Please select a filter!</h2>
     }
 
-    return movies.movies.map(m => <Movie key={Math.random()}
+    return movies.movies.map(m => <Movie key={m.imdbID}
                                          movie={m}
                                          showDetailsModal={showDetailsModal}
     />);
