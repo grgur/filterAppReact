@@ -7,7 +7,7 @@ const Filters = ({filters, actions}) => {
   const {type, genres, rating} = filters;
   const {selectType, selectRating, toggleGenre} = actions;
   return (
-    <div>
+    <div id="filters-wrapper">
       <Type type={type} selectType={selectType}/>
       <Rated rating={rating} selectRating={selectRating}/>
       <Genre genres={genres} toggleGenre={toggleGenre}/>

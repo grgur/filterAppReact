@@ -19,7 +19,6 @@ class Notifications extends PureComponent {
 
     return (
       <div id="notifications">
-        <h1>Notifications</h1>
         {overlay}
         {modalJsx}
         {spinnerJsx}
