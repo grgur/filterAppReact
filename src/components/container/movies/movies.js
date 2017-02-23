@@ -2,6 +2,8 @@ import React, {PropTypes} from 'react';
 
 import Movie from './movie/movie';
 
+import './movies.scss';
+
 const Movies = ({movies}) => {
 
   function getMoviesHtml() {
@@ -9,7 +11,7 @@ const Movies = ({movies}) => {
   }
 
   return (
-    <div>
+    <div id="movies">
       <h1>MOVIES</h1>
       {getMoviesHtml()}
     </div>

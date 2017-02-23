@@ -1,6 +1,13 @@
+html, body, #root, #container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 #filters-menu-wrapper {
   float: left;
   padding-left: 20px;
+  height: 100%;
   width: 233px;
   border-right: 2px solid #BABFD1;
 
