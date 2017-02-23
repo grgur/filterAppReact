@@ -4,13 +4,12 @@ import Movie from './movie/movie';
 
 import './movies.scss';
 
-const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
+const Movies = ({movies, showDetailsModal}) => {
 
   function getMovieElements() {
     return movies.movies.map(m => <Movie key={m.imdbID}
                                          movie={m}
                                          showDetailsModal={showDetailsModal}
-                                         hideDetailsModal={hideDetailsModal}
     />);
   }
 
@@ -26,7 +25,6 @@ const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
 Movies.propTypes = {
   movies: PropTypes.object.isRequired,
   showDetailsModal: PropTypes.func.isRequired,
-  hideDetailsModal: PropTypes.func.isRequired
 };
 
 export default Movies;
