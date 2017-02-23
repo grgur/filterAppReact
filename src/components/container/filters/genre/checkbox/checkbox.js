@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react';
 
+import './checkbox.scss';
+
 const Checkbox = ({name, label, value, handleChange}) => {
 
   return (
-    <label>
+    <label className="genre-checkbox">
       <input type="checkbox" name={name} checked={!!value} onChange={(e) => {
         handleChange(name, e.target.checked)}}/>
       {label}
