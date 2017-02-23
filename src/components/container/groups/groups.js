@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 
+import './groups.scss';
+
 const Groups = ({groups, selectGroup}) => {
 
   function getGroupsHtml() {
@@ -7,7 +9,7 @@ const Groups = ({groups, selectGroup}) => {
   }
 
   return (
-    <div>
+    <div id="groups">
       <h1>GROUPS</h1>
       {getGroupsHtml()}
     </div>

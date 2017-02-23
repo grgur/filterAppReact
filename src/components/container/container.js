@@ -28,12 +28,14 @@ class Container extends PureComponent {
           <FaBars id="filters-menu-icon"/>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
-        <article id="groups-wrapper">
-          <Groups groups={groups} selectGroup={selectGroup}/>
-        </article>
-        <article id="movies-wrapper">
-          <Movies movies={movies}/>
-        </article>
+        <div id="main-content">
+          <article id="groups-wrapper">
+            <Groups groups={groups} selectGroup={selectGroup}/>
+          </article>
+          <article id="movies-wrapper">
+            <Movies movies={movies}/>
+          </article>
+        </div>
       </div>
     )
   }

@@ -11,7 +11,7 @@
   & #filters-menu-icon {
     font-size: 47px;
     margin-top: 10px;
-
+    
     @media screen and (min-width:1280px) {
       & {
         display: none;
@@ -20,14 +20,12 @@
   }
 }
 
-#groups-wrapper, #movies-wrapper {
-  margin-left: 20px;
+#main-content {
+  display: inline-block;
+  width: 82%;
 }
 
 #groups-wrapper {
-  display: inline-block;
-}
-
-#movies-wrapper {
-  display: block;
+  height: 100px;
+  border-bottom: 2px solid #BABFD1;
 }
