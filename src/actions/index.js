@@ -4,6 +4,8 @@ export const TOGGLE_GENRE = 'TOGGLE_GENRE';
 export const SELECT_GROUP = 'SELECT_GROUP';
 export const LOAD_MOVIES_START = 'LOAD_MOVIES_START';
 export const LOAD_MOVIES_FINISH = 'LOAD_MOVIES_FINISH';
+export const SHOW_DETAILS_MODAL = 'SHOW_DETAILS_MODAL';
+export const HIDE_DETAILS_MODAL = 'HIDE_DETAILS_MODAL';
 
 export function selectType(newType) {
   return {
@@ -98,5 +100,18 @@ function showMovies(movies) {
   return {
     type: LOAD_MOVIES_FINISH,
     movies
+  }
+}
+
+export function showDetailsModal(details) {
+  return {
+    type: SHOW_DETAILS_MODAL,
+    details
+  }
+}
+
+export function hideDetailsModal() {
+  return {
+    type: HIDE_DETAILS_MODAL
   }
 }

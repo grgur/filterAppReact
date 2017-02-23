@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 
-const Movie = ({movie}) => {
+const Movie = ({movie, showDetailsModal, hideDetailsModal}) => {
 
   return (
-    <div>
+    <div onClick={() => showDetailsModal(movie)}>
       {movie.Title}
     </div>
   )
@@ -11,7 +11,9 @@ const Movie = ({movie}) => {
 };
 
 Movie.propTypes = {
-  movie: PropTypes.object.isRequired
+  movie: PropTypes.object.isRequired,
+  showDetailsModal: PropTypes.func.isRequired,
+  hideDetailsModal: PropTypes.func.isRequired
 };
 
 export default Movie;

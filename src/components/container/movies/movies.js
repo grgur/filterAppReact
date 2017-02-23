@@ -2,10 +2,14 @@ import React, {PropTypes} from 'react';
 
 import Movie from './movie/movie';
 
-const Movies = ({movies}) => {
+const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
 
   function getMoviesHtml() {
-    return movies.movies.map(m => <Movie key={m.imdbID} movie={m}/>);
+    return movies.movies.map(m => <Movie key={m.imdbID}
+                                         movie={m}
+                                         showDetailsModal={showDetailsModal}
+                                         hideDetailsModal={hideDetailsModal}
+    />);
   }
 
   return (
@@ -18,7 +22,9 @@ const Movies = ({movies}) => {
 };
 
 Movies.propTypes = {
-  movies: PropTypes.object.isRequired
+  movies: PropTypes.object.isRequired,
+  showDetailsModal: PropTypes.func.isRequired,
+  hideDetailsModal: PropTypes.func.isRequired
 };
 
 export default Movies;
