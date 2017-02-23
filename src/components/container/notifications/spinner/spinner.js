@@ -1,14 +1,12 @@
 import React, {PropTypes} from 'react';
 
+import './spinner.scss';
+
 const Spinner = props => {
   return (
-    <div>
-      <h1>I am a spinner</h1>
-    </div>
+    <div className="spinner"/>
   )
 };
-
-Spinner.propTypes = {};
 
 export default Spinner;
 
