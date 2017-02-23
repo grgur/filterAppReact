@@ -20,7 +20,7 @@ class Container extends PureComponent {
   }
 
   render() {
-    const {filters, groups, movies, notifications, selectType, selectRating, toggleGenre, selectGroup} = this.props;
+    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
 
     return (
@@ -35,7 +35,7 @@ class Container extends PureComponent {
         <article>
           <Movies movies={movies}/>
         </article>
-        <Notifications notifications={notifications}/>
+        <Notifications />
       </div>
     )
   }
@@ -46,12 +46,11 @@ Container.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const {filters, groups, movies, notifications} = state;
+  const {filters, groups, movies} = state;
   return {
     filters,
     groups,
-    movies,
-    notifications
+    movies
   }
 }
 

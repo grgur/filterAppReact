@@ -1,14 +1,29 @@
-import React from 'react';
+import React, {PureComponent, PropTypes} from 'react';
+import {connect} from 'react-redux';
 
-const Notifications = props => {
+import Spinner from './spinner/spinner';
 
-  console.dir(props);
+class Notifications extends PureComponent {
+  render() {
+    const {modal, spinner} = this.props;
+    let modalJsx = modal.visible ? null : null;
+    let spinnerJsx = spinner.visible ? <Spinner/> : null;
 
-  return (
-    <div>
-      <h1>Notifications</h1>
-    </div>
-  )
-};
+    return (
+      <div>
+        <h1>Notifications</h1>
+        {modalJsx}
+        {spinnerJsx}
+      </div>
+    )
+  }
+}
 
-export default Notifications;
+function mapStateToProps(state) {
+  return {
+    modal: state.notifications.modal,
+    spinner: state.notifications.spinner
+  }
+}
+
+export default connect(mapStateToProps)(Notifications) ;
