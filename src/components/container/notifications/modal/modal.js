@@ -2,21 +2,18 @@ import React, {PropTypes} from 'react';
 
 import './modal.scss';
 
-const Modal = ({movie}) => {
-
-  console.dir(movie);
-
+const Modal = ({children}) => {
   return (
     <div className="modal">
-      <h1>
-        Hi I'm a Modal
-      </h1>
+      <div className="modal-body">
+        {children}
+      </div>
     </div>
   )
 };
 
 Modal.propTypes = {
-  movie: PropTypes.object.isRequired
+  children: PropTypes.element.isRequired
 };
 
 export default Modal;

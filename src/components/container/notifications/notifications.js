@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 
 import Spinner from './spinner/spinner';
 import Modal from './modal/modal';
+import Details from '../movies/movie/details/details';
+
+import './notifications.scss';
 
 /**
  * A container component for modal windows, spinners and alerts.
@@ -10,12 +13,14 @@ import Modal from './modal/modal';
 class Notifications extends PureComponent {
   render() {
     const {modal, spinner} = this.props;
-    let modalJsx = modal.visible ? <Modal movie={modal.movie}/> : null;
+    let modalJsx = modal.visible ? <Modal><Details movie={modal.movie}/></Modal> : null;
+    let overlay = modal.visible ? <div id="overlay"></div> : null;
     let spinnerJsx = spinner.visible ? <Spinner/> : null;
 
     return (
-      <div>
+      <div id="notifications">
         <h1>Notifications</h1>
+        {overlay}
         {modalJsx}
         {spinnerJsx}
       </div>

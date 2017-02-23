@@ -4,7 +4,7 @@ import './spinner.scss';
 
 const Spinner = props => {
   return (
-    <div className="spinner"/>
+    <div className="spinner"></div>
   )
 };
 

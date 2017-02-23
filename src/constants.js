@@ -1,6 +1,6 @@
 const constants = {
   types: [
-    {label: 'Movie', value: 'movie'},
+    {label: 'Movie', value: 'content'},
     {label: 'Series', value: 'series'},
     {label: 'Episode', value: 'episode'}
   ],

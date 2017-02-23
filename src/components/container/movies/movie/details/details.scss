@@ -1,0 +1,35 @@
+.movie-details {
+  position: relative;
+  height: 400px;
+  min-width: 840px;
+  text-align: left;
+  padding: 30px 10px;
+
+  .poster-holder {
+    position: absolute;
+    left: 10px;
+    width: 278px;
+    height: 400px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+
+  .data-holder {
+    position: absolute;
+    left: 298px;
+    padding: 0 5px;
+    width: 400px;
+
+    div {
+      margin: 10px 0;
+    }
+
+    .data-text {
+      color: #6e7273;
+    }
+  }
+}

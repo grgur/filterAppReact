@@ -1,6 +1,6 @@
 const defaultModal = {visible: false};
 const defaultSpinner = {visible: false};
-const defaultType = 'movie';
+const defaultType = 'content';
 const defaultRating = 'N/A';
 const defaultGenres = ['Action', 'Comedy'];
 const defaultGroups = [
@@ -14,14 +14,14 @@ const defaultGroups = [
   {
     id: '2',
     name: 'Family movies',
-    type: 'movie',
+    type: 'content',
     rating: 'G',
     genres: ['Comedy', 'Family']
   },
   {
     id: '3',
     name: 'Fantasy movies',
-    type: 'movie',
+    type: 'content',
     rating: 'PG-13',
     genres: ['Fantasy']
   }
@@ -47,7 +47,7 @@ const defaultMovies = {
       "imdbRating": "8.8",
       "imdbVotes": "1,292,127",
       "imdbID": "tt0120737",
-      "Type": "movie",
+      "Type": "content",
       "Response": "True"
     }
   ]
