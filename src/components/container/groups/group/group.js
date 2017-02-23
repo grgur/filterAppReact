@@ -1,18 +1,22 @@
 import React, {PropTypes} from 'react';
 
-const Group = ({group, selectGroup}) => {
+import './group.scss';
+
+const Group = ({group, index, selectGroup}) => {
 
   return (
-    <span onClick={() => selectGroup(group)}>
-      <span>{group.name}</span>
-    </span>
+    <div className="group" onClick={() => selectGroup(group)}>
+      <div className="number-circle">{index}</div>
+      <div className="group-name">{group.name}</div>
+    </div>
   );
 
 };
 
 Group.propTypes = {
   group: PropTypes.object.isRequired,
-  selectGroup: PropTypes.func.isRequired
+  selectGroup: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default Group;

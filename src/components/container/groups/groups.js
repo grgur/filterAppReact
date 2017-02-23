@@ -7,12 +7,11 @@ import './groups.scss';
 const Groups = ({groups, selectGroup}) => {
 
   function getGroupElements() {
-    return groups.map(group => <Group key={`group${group.id}`} group={group} selectGroup={selectGroup}/>)
+    return groups.map((group, index) => <Group key={`group${group.id}`} index={index} group={group} selectGroup={selectGroup}/>)
   }
 
   return (
     <div id="groups">
-      <h1>GROUPS</h1>
       {getGroupElements()}
     </div>
   );
