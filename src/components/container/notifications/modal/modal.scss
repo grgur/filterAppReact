@@ -1,0 +1,16 @@
+.modal {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0 auto;
+  height: 460px;
+  width: 710px;
+
+  .modal-body {
+    border-radius: 5px;
+    background-color: white;
+  }
+}

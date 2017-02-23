@@ -2,8 +2,17 @@ import React, {PureComponent, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import FaBars from 'react-icons/lib/fa/bars';
 
-import {selectType, selectRating, toggleGenre, selectGroup, loadMovies} from '../../actions';
+import {
+  selectType,
+  selectRating,
+  toggleGenre,
+  selectGroup,
+  loadMovies,
+  showDetailsModal,
+  hideDetailsModal
+} from '../../actions';
 
+import Notifications from './notifications/notifications';
 import Filters from './filters/filters';
 import Groups from './groups/groups';
 import Movies from './movies/movies';
@@ -19,7 +28,7 @@ class Container extends PureComponent {
   }
 
   render() {
-    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup} = this.props;
+    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup, showDetailsModal, hideDetailsModal} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
 
     return (
@@ -28,12 +37,13 @@ class Container extends PureComponent {
           <FaBars id="filters-menu-icon"/>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
+        <Notifications />
         <div id="main-content">
           <article id="groups-wrapper">
             <Groups groups={groups} selectGroup={selectGroup}/>
           </article>
           <article id="movies-wrapper">
-            <Movies movies={movies}/>
+            <Movies movies={movies} showDetailsModal={showDetailsModal} hideDetailsModal={hideDetailsModal}/>
           </article>
         </div>
       </div>
@@ -60,7 +70,9 @@ function mapDispatchToProps(dispatch) {
     selectRating: rating => dispatch(selectRating(rating)),
     toggleGenre: (genre, add) => dispatch(toggleGenre(genre, add)),
     selectGroup: group => dispatch(selectGroup(group)),
-    loadMovies: filters => dispatch(loadMovies(filters))
+    loadMovies: filters => dispatch(loadMovies(filters)),
+    showDetailsModal: movie => dispatch(showDetailsModal(movie)),
+    hideDetailsModal: () => dispatch(hideDetailsModal())
   }
 }
 
