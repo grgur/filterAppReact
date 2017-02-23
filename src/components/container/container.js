@@ -8,8 +8,7 @@ import {
   toggleGenre,
   selectGroup,
   loadMovies,
-  showDetailsModal,
-  hideDetailsModal
+  showDetailsModal
 } from '../../actions';
 
 import Notifications from './notifications/notifications';
@@ -28,7 +27,7 @@ class Container extends PureComponent {
   }
 
   render() {
-    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup, showDetailsModal, hideDetailsModal} = this.props;
+    const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup, showDetailsModal} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
 
     return (
@@ -37,13 +36,13 @@ class Container extends PureComponent {
           <FaBars id="filters-menu-icon"/>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
-        <Notifications />
+        <Notifications/>
         <div id="main-content">
           <article id="groups-wrapper">
             <Groups groups={groups} selectGroup={selectGroup}/>
           </article>
           <article id="movies-wrapper">
-            <Movies movies={movies} showDetailsModal={showDetailsModal} hideDetailsModal={hideDetailsModal}/>
+            <Movies movies={movies} showDetailsModal={showDetailsModal}/>
           </article>
         </div>
       </div>
@@ -71,8 +70,7 @@ function mapDispatchToProps(dispatch) {
     toggleGenre: (genre, add) => dispatch(toggleGenre(genre, add)),
     selectGroup: group => dispatch(selectGroup(group)),
     loadMovies: filters => dispatch(loadMovies(filters)),
-    showDetailsModal: movie => dispatch(showDetailsModal(movie)),
-    hideDetailsModal: () => dispatch(hideDetailsModal())
+    showDetailsModal: movie => dispatch(showDetailsModal(movie))
   }
 }
 

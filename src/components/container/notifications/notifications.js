@@ -1,6 +1,8 @@
 import React, {PureComponent, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
+import {hideDetailsModal} from '../../../actions'
+
 import Spinner from './spinner/spinner';
 import Modal from './modal/modal';
 import Details from '../movies/movie/details/details';
@@ -12,9 +14,9 @@ import './notifications.scss';
  */
 class Notifications extends PureComponent {
   render() {
-    const {modal, spinner} = this.props;
+    const {modal, spinner, hideDetailsModal} = this.props;
     let overlay = modal.visible ? <div id="overlay"></div> : null;
-    let modalElement = modal.visible ? <Modal><Details movie={modal.movie}/></Modal> : null;
+    let modalElement = modal.visible ? <Modal hideDetailsModal={hideDetailsModal}><Details movie={modal.movie}/></Modal> : null;
     let spinnerElement = spinner.visible ? <Spinner/> : null;
 
     return (
@@ -34,4 +36,10 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Notifications) ;
+function mapDispatchToProps(dispatch) {
+  return {
+    hideDetailsModal: () => dispatch(hideDetailsModal())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Notifications) ;

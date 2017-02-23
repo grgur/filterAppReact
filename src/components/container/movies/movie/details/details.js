@@ -26,9 +26,6 @@ const Details = ({movie}) => {
           <span>Director: </span><span className="data-text">{movie.Director}</span>
         </div>
         <div>
-          <span>Plot: </span><span className="data-text">{movie.Plot}</span>
-        </div>
-        <div>
           <span>Year: </span><span className="data-text">{movie.Year}</span>
         </div>
         <div>

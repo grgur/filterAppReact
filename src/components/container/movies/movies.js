@@ -1,22 +1,25 @@
 import React, {PropTypes} from 'react';
 
+import constants from '../../../constants';
 import Movie from './movie/movie';
 
 import './movies.scss';
 
-const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
+const Movies = ({movies, showDetailsModal}) => {
 
   function getMovieElements() {
+    if (movies.status !== constants.movieStatus.LOADING && !movies.movies.length) {
+      return <h2>Please select a filter!</h2>
+    }
+
     return movies.movies.map(m => <Movie key={m.imdbID}
                                          movie={m}
                                          showDetailsModal={showDetailsModal}
-                                         hideDetailsModal={hideDetailsModal}
     />);
   }
 
   return (
     <div id="movies">
-      <h1>MOVIES</h1>
       {getMovieElements()}
     </div>
   );
@@ -26,7 +29,6 @@ const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
 Movies.propTypes = {
   movies: PropTypes.object.isRequired,
   showDetailsModal: PropTypes.func.isRequired,
-  hideDetailsModal: PropTypes.func.isRequired
 };
 
 export default Movies;

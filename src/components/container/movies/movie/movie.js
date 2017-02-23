@@ -1,31 +1,19 @@
-import React, {PropTypes, PureComponent} from 'react';
-import onClickOutside from 'react-onclickoutside';
+import React, {PropTypes} from 'react';
 
-class Movie extends PureComponent {
+import './movie.scss';
 
-  /**
-   * Used by onClickOutside HOC
-   */
-  handleClickOutside() {
-    this.props.hideDetailsModal();
-  }
-
-  render() {
-    const {movie, showDetailsModal} = this.props;
-
-    return (
-      <div onClick={() => showDetailsModal(movie)}>
-        {movie.Title}
-      </div>
-    )
-  }
-
-}
+const Movie = ({movie, showDetailsModal}) => {
+  return (
+    <div className="movie" onClick={() => showDetailsModal(movie)}>
+      <h3>{movie.Title}</h3>
+      <p>{movie.Year}</p>
+    </div>
+  )
+};
 
 Movie.propTypes = {
   movie: PropTypes.object.isRequired,
-  showDetailsModal: PropTypes.func.isRequired,
-  hideDetailsModal: PropTypes.func.isRequired
+  showDetailsModal: PropTypes.func.isRequired
 };
 
-export default onClickOutside(Movie);
+export default Movie;
