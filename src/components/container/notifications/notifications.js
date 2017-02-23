@@ -13,15 +13,15 @@ import './notifications.scss';
 class Notifications extends PureComponent {
   render() {
     const {modal, spinner} = this.props;
-    let modalJsx = modal.visible ? <Modal><Details movie={modal.movie}/></Modal> : null;
     let overlay = modal.visible ? <div id="overlay"></div> : null;
-    let spinnerJsx = spinner.visible ? <Spinner/> : null;
+    let modalElement = modal.visible ? <Modal><Details movie={modal.movie}/></Modal> : null;
+    let spinnerElement = spinner.visible ? <Spinner/> : null;
 
     return (
       <div id="notifications">
         {overlay}
-        {modalJsx}
-        {spinnerJsx}
+        {modalElement}
+        {spinnerElement}
       </div>
     )
   }

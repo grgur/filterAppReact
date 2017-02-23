@@ -6,7 +6,7 @@ import './movies.scss';
 
 const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
 
-  function getMoviesHtml() {
+  function getMovieElements() {
     return movies.movies.map(m => <Movie key={m.imdbID}
                                          movie={m}
                                          showDetailsModal={showDetailsModal}
@@ -17,7 +17,7 @@ const Movies = ({movies, showDetailsModal, hideDetailsModal}) => {
   return (
     <div id="movies">
       <h1>MOVIES</h1>
-      {getMoviesHtml()}
+      {getMovieElements()}
     </div>
   );
 
