@@ -25,7 +25,7 @@ function toggleGenre(genres, genre, add) {
   }
 }
 
-function genres(state = defaultGenres, action) {
+function genre(state = defaultGenres, action) {
   switch (action.type) {
 
     case TOGGLE_GENRE:
@@ -39,18 +39,18 @@ function genres(state = defaultGenres, action) {
   }
 }
 
-function rating(state = defaultRating, action) {
+function rated(state = defaultRating, action) {
   switch (action.type) {
 
     case SELECT_RATING:
-      return action.rating;
+      return action.rated;
 
     case SELECT_GROUP:
-      return action.group.rating;
+      return action.group.rated;
 
     default:
       return state;
   }
 }
 
-export default combineReducers({type, genres, rating});
+export default combineReducers({type, genre, rated});

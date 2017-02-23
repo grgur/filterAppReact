@@ -111,6 +111,9 @@ module.exports = function (env) {
         version: false,
         warnings: true
       },
+      proxy: {
+        "/api/*": "http://localhost:3000"
+      }
     }
   }
 

@@ -2,10 +2,10 @@ import React, {PropTypes} from 'react';
 import constants from '../../../../constants';
 import Checkbox from './checkbox/checkbox';
 
-const Genre = ({genres, toggleGenre}) => {
+const Genre = ({genre, toggleGenre}) => {
 
-  function isGenreSelected(genre) {
-    return genres.includes(genre);
+  function isGenreSelected(genreName) {
+    return genre.includes(genreName);
   }
 
   const genreNames = constants.genres;
@@ -25,7 +25,7 @@ const Genre = ({genres, toggleGenre}) => {
 };
 
 Genre.propTypes = {
-  genres: PropTypes.array.isRequired,
+  genre: PropTypes.array.isRequired,
   toggleGenre: PropTypes.func.isRequired
 };
 

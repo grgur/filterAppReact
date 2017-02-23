@@ -9,7 +9,8 @@ const constants = {
   movieStatus: {
     LOADING: 'LOADING',
     DONE: 'DONE'
-  }
+  },
+  apiUrl: '/api/v1/movies'
 };
 
 export default constants;

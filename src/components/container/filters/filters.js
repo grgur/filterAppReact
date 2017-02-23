@@ -4,13 +4,13 @@ import Rated from './rated/rated';
 import Genre from './genre/genre';
 
 const Filters = ({filters, actions}) => {
-  const {type, genres, rating} = filters;
+  const {type, genre, rated} = filters;
   const {selectType, selectRating, toggleGenre} = actions;
   return (
     <div id="filters-wrapper">
       <Type type={type} selectType={selectType}/>
-      <Rated rating={rating} selectRating={selectRating}/>
-      <Genre genres={genres} toggleGenre={toggleGenre}/>
+      <Rated rated={rated} selectRating={selectRating}/>
+      <Genre genre={genre} toggleGenre={toggleGenre}/>
     </div>
   );
 };
