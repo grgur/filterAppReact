@@ -1,0 +1,9 @@
+.genre-checkbox {
+  display: block;
+  margin-bottom: 6px;
+  
+  & > input {
+    height: 14px;
+    margin-right: 8px;
+  }
+}

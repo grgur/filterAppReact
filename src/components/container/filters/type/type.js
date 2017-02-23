@@ -5,12 +5,15 @@ import Select from './select/select';
 
 const Types = ({type, selectType}) => {
   return (
-    <div>
+    <div id="types-filter-wrapper">
       <h3>Type</h3>
-      <Select options={constants.types}
-              selected={type} id="selectType"
-              handleChange={e => selectType(e.target.value)}
-      />
+      <span className="dropdown">
+        <Select options={constants.types}
+                selected={type}
+                id="selectType"
+                handleChange={e => selectType(e.target.value)}
+        />
+      </span>
     </div>
   );
 };

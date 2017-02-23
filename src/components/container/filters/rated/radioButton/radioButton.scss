@@ -1,0 +1,9 @@
+.rated-radio-button {
+  display: block;
+  margin-bottom: 6px;
+  
+  & > input {
+    height: 15px;
+    margin-right: 8px;
+  }
+}

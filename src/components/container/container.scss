@@ -1,14 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html, body, #root, #container {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3 { 
+  font-family: "Roboto Slab", serif;
 }
 
 #filters-menu-wrapper {
   float: left;
   padding-left: 20px;
   height: 100%;
-  width: 233px;
+  width: 19vw;
   border-right: 2px solid #BABFD1;
 
   & > div {
@@ -29,7 +42,7 @@ html, body, #root, #container {
 
 #main-content {
   display: inline-block;
-  width: 82%;
+  width: 81vw;
 }
 
 #groups-wrapper {
