@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html, body, #root, #container {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: "Lato";
 }
 
 *, *:before, *:after {
