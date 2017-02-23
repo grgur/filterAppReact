@@ -5,8 +5,8 @@ import './movie.scss';
 const Movie = ({movie, showDetailsModal}) => {
   return (
     <div className="movie" onClick={() => showDetailsModal(movie)}>
-      <h3>{movie.Title}</h3>
-      <p>{movie.Year}</p>
+      <h3>{movie.title}</h3>
+      <p>{movie.year}</p>
     </div>
   )
 };
