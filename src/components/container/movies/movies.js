@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 
+import constants from '../../../constants';
 import Movie from './movie/movie';
 
 import './movies.scss';
@@ -7,6 +8,10 @@ import './movies.scss';
 const Movies = ({movies, showDetailsModal}) => {
 
   function getMovieElements() {
+    if (movies.status !== constants.movieStatus.LOADING && !movies.movies.length) {
+      return <h2>Please select a filter!</h2>
+    }
+
     return movies.movies.map(m => <Movie key={m.imdbID}
                                          movie={m}
                                          showDetailsModal={showDetailsModal}
@@ -15,7 +20,6 @@ const Movies = ({movies, showDetailsModal}) => {
 
   return (
     <div id="movies">
-      <h1>MOVIES</h1>
       {getMovieElements()}
     </div>
   );

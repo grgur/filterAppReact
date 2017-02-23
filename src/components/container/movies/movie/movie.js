@@ -1,9 +1,12 @@
 import React, {PropTypes} from 'react';
 
+import './movie.scss';
+
 const Movie = ({movie, showDetailsModal}) => {
   return (
-    <div onClick={() => showDetailsModal(movie)}>
-      {movie.Title}
+    <div className="movie" onClick={() => showDetailsModal(movie)}>
+      <h3>{movie.Title}</h3>
+      <p>{movie.Year}</p>
     </div>
   )
 };
