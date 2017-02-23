@@ -61,7 +61,7 @@ export function loadMovies(filters) {
         "imdbRating": "8.8",
         "imdbVotes": "1,292,127",
         "imdbID": "tt0120737",
-        "Type": "content",
+        "Type": "movie",
         "Response": "True"
       },
       {
@@ -82,7 +82,7 @@ export function loadMovies(filters) {
         "imdbRating": "8.7",
         "imdbVotes": "955,091",
         "imdbID": "tt0076759",
-        "Type": "content",
+        "Type": "movie",
         "Response": "True"
       }
     ];
