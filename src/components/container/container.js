@@ -45,7 +45,7 @@ class Container extends PureComponent {
   render() {
     const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup, showDetailsModal} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
-    const sidebarClassName = this.state.isSidebarOpen ? 'opened-sidebar' : 'closed-sidebar';
+    const sidebarClassName = this.state.isSidebarOpen ? null : 'closed-sidebar';
 
     return (
       <div id="container">
