@@ -35,7 +35,7 @@ h1, h2, h3 {
   float: left;
   padding-left: 20px;
   height: 100%;
-  width: 19vw;
+  width: 19%;
   border-right: 2px solid #BABFD1;
 
   & > div {
@@ -56,7 +56,7 @@ h1, h2, h3 {
 #main-content {
   display: inline-block;
   padding-top: 9px;
-  width: 81vw;
+  width: 81%;
 
   @media screen and (max-width: 1280px) {
     &.closed-sidebar{
