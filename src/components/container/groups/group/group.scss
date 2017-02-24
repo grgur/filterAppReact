@@ -7,17 +7,21 @@
   .number-circle {
     cursor: pointer;
     border-radius: 50%;
-
+    background-color: #20b2aa;
     width: 42px;
     height: 42px;
     padding: 8px;
     margin: 0 auto;
 
-    background: rgba(0, 0, 0, 0.9);
     border: 2px solid;
     color: white;
 
     font: 32px;
+
+    &:hover{
+      opacity: 0.7;
+      transition: 0.2s;
+    }
   }
 
   .group-name {
