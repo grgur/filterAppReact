@@ -66,6 +66,11 @@ h1, h2, h3 {
 }
 
 #groups-wrapper {
-  height: 100px;
+  height: 20vh;
   border-bottom: 2px solid #BABFD1;
+}
+
+#movies-wrapper {
+  height: 80vh;
+  overflow: scroll;
 }
