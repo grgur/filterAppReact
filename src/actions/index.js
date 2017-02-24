@@ -45,7 +45,7 @@ export function selectGroup(group) {
 function updateFilters(action) {
   return dispatch => {
     dispatch(action);
-    dispatch(loadMovies());
+    return dispatch(loadMovies());
   }
 }
 
