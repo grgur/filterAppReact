@@ -25,7 +25,7 @@ class Container extends PureComponent {
     this.toggleSidebarState = this.toggleSidebarState.bind(this);
 
     this.state = {
-      sidebarState: 'closed-sidebar'
+      isSidebarOpen: false
     };
   }
 
@@ -37,30 +37,24 @@ class Container extends PureComponent {
   }
 
   toggleSidebarState() {
-    if(this.state.sidebarState === 'closed-sidebar') {
-      this.setState({
-        sidebarState: 'opened-sidebar'
-      });
-    }
-    else {
-      this.setState({
-        sidebarState: 'closed-sidebar'
-      });
-    }
+    this.setState({
+      isSidebarOpen: !this.state.isSidebarOpen
+    });
   }
 
   render() {
     const {filters, groups, movies, selectType, selectRating, toggleGenre, selectGroup, showDetailsModal} = this.props;
     const filterActions = {selectType, selectRating, toggleGenre};
+    const sidebarClassName = this.state.isSidebarOpen ? 'opened-sidebar' : 'closed-sidebar';
 
     return (
       <div id="container">
         <FaBars id="filters-menu-icon" onClick={this.toggleSidebarState}/>
-        <aside id="filters-menu-wrapper" className={this.state.sidebarState}>
+        <aside id="filters-menu-wrapper" className={sidebarClassName}>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
         <Notifications/>
-        <div id="main-content" className={this.state.sidebarState}>
+        <div id="main-content" className={sidebarClassName}>
           <article id="groups-wrapper">
             <Groups groups={groups} selectGroup={selectGroup}/>
           </article>

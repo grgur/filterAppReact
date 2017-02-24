@@ -17,6 +17,20 @@ h1, h2, h3 {
   font-family: "Roboto Slab", serif;
 }
 
+#filters-menu-icon {
+  position: absolute;
+  left: 18px;
+  top: 9px;
+  font-size: 47px;
+  margin-top: 10px;
+  
+  @media screen and (min-width: 1280px) {
+    & {
+      display: none;
+    }
+  }
+}
+
 #filters-menu-wrapper {
   float: left;
   padding-left: 20px;
@@ -28,21 +42,27 @@ h1, h2, h3 {
     padding-right: 12px;
   }
 
-  & #filters-menu-icon {
-    font-size: 47px;
-    margin-top: 10px;
-    
-    @media screen and (min-width:1280px) {
-      & {
-        display: none;
-      }
+  @media screen and (max-width: 1280px) {
+    & {
+      padding-top: 68px;
+    }
+
+    &.closed-sidebar {
+      display: none;
     }
   }
 }
 
 #main-content {
   display: inline-block;
+  padding-top: 9px;
   width: 81vw;
+
+  @media screen and (max-width: 1280px) {
+    &.closed-sidebar{
+      width: 100vw;
+    }
+  }
 }
 
 #groups-wrapper {
