@@ -35,7 +35,7 @@ h1, h2, h3 {
   float: left;
   padding-left: 20px;
   height: 100%;
-  width: 19vw;
+  width: 19%;
   border-right: 2px solid #BABFD1;
 
   & > div {
@@ -56,21 +56,29 @@ h1, h2, h3 {
 #main-content {
   display: inline-block;
   padding-top: 9px;
-  width: 81vw;
+  height: 100%;
+  width: 81%;
 
   @media screen and (max-width: 1280px) {
     &.closed-sidebar{
-      width: 100vw;
+      width: 100%;
     }
   }
 }
 
 #groups-wrapper {
-  height: 20vh;
   border-bottom: 2px solid #BABFD1;
+  height: 100px;
+
+  @media screen and (max-width: 1280px) {
+      & {
+        height: 108px;
+      }
+    }
 }
 
 #movies-wrapper {
-  height: 80vh;
-  overflow: scroll;
+  height: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
