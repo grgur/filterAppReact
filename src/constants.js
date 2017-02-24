@@ -8,7 +8,8 @@ const constants = {
   genres: ['Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Horror', 'Romance'],
   movieStatus: {
     LOADING: 'LOADING',
-    DONE: 'DONE'
+    DONE: 'DONE',
+    START: 'START'
   },
   apiUrl: '/api/v1/movies'
 };

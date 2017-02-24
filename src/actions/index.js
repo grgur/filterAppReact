@@ -43,10 +43,8 @@ export function loadMovies(filters) {
     dispatch(startLoadingMovies());
 
     getMovies(filters)
-      .then(response => {
-        dispatch(showMovies(response.data));
-      })
-      .catch(error => console.error(error));
+      .then(response => dispatch(showMovies(response.data)))
+      .catch(error => dispatch(showMovies([])));
   }
 }
 

@@ -18,7 +18,7 @@ const Details = ({movie}) => {
           <span>Title: </span><span className="data-text">{title}</span>
         </div>
         <div>
-          <span>Genre: </span><span className="data-text">{genre}</span>
+          <span>Genre: </span><span className="data-text">{genre.join(', ')}</span>
         </div>
         <div>
           <span>Actors: </span><span className="data-text">{actors}</span>
