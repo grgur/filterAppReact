@@ -56,21 +56,28 @@ h1, h2, h3 {
 #main-content {
   display: inline-block;
   padding-top: 9px;
+  height: 100%;
   width: 81%;
 
   @media screen and (max-width: 1280px) {
     &.closed-sidebar{
-      width: 100vw;
+      width: 100%;
     }
   }
 }
 
 #groups-wrapper {
-  height: 20vh;
   border-bottom: 2px solid #BABFD1;
+  height: 100px;
+
+  @media screen and (max-width: 1280px) {
+      & {
+        height: 6%;
+      }
+    }
 }
 
 #movies-wrapper {
-  height: 80vh;
+  height: 80%;
   overflow: scroll;
 }
