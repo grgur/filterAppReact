@@ -1,4 +1,10 @@
 #groups {
   margin-left: 38px;
   padding: 5px 10px;
+
+  @media screen and (max-width: 1280px) {
+    & {
+      margin-left: 15vw;
+    }
+  }
 }
