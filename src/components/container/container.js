@@ -7,7 +7,6 @@ import {
   selectRating,
   toggleGenre,
   selectGroup,
-  loadMovies,
   showDetailsModal
 } from '../../actions';
 
@@ -27,13 +26,6 @@ class Container extends PureComponent {
     this.state = {
       isSidebarOpen: false
     };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const {filters, loadMovies} = this.props;
-    if (nextProps.filters !== filters) {
-      loadMovies(nextProps.filters);
-    }
   }
 
   toggleSidebarState() {
@@ -86,7 +78,6 @@ function mapDispatchToProps(dispatch) {
     selectRating: rating => dispatch(selectRating(rating)),
     toggleGenre: (genre, add) => dispatch(toggleGenre(genre, add)),
     selectGroup: group => dispatch(selectGroup(group)),
-    loadMovies: filters => dispatch(loadMovies(filters)),
     showDetailsModal: movie => dispatch(showDetailsModal(movie))
   }
 }
