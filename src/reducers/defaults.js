@@ -27,7 +27,7 @@ const defaultGroups = [
   }
 ];
 const defaultMovies = {
-  status: 'DONE',
+  status: 'START',
   movies: []
 };
 
