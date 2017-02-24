@@ -19,10 +19,33 @@ import './container.scss';
 
 class Container extends PureComponent {
 
+  constructor() {
+    super();
+
+    this.toggleSidebarState = this.toggleSidebarState.bind(this);
+
+    this.state = {
+      sidebarState: 'closed-sidebar'
+    };
+  }
+
   componentWillReceiveProps(nextProps) {
     const {filters, loadMovies} = this.props;
     if (nextProps.filters !== filters) {
       loadMovies(nextProps.filters);
+    }
+  }
+
+  toggleSidebarState() {
+    if(this.state.sidebarState === 'closed-sidebar') {
+      this.setState({
+        sidebarState: 'opened-sidebar'
+      });
+    }
+    else {
+      this.setState({
+        sidebarState: 'closed-sidebar'
+      });
     }
   }
 
@@ -32,12 +55,12 @@ class Container extends PureComponent {
 
     return (
       <div id="container">
-        <aside id="filters-menu-wrapper">
-          <FaBars id="filters-menu-icon"/>
+        <FaBars id="filters-menu-icon" onClick={this.toggleSidebarState}/>
+        <aside id="filters-menu-wrapper" className={this.state.sidebarState}>
           <Filters filters={filters} actions={filterActions}/>
         </aside>
         <Notifications/>
-        <div id="main-content">
+        <div id="main-content" className={this.state.sidebarState}>
           <article id="groups-wrapper">
             <Groups groups={groups} selectGroup={selectGroup}/>
           </article>
